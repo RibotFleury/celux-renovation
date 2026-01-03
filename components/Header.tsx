@@ -31,7 +31,7 @@ const Header: React.FC = () => {
           <div className="flex items-center space-x-3 group cursor-pointer">
             
             <a href="#"><img
-              src="celux_renovation_logo.jpg"
+              src="/images/celux_renovation_logo.jpg"
               alt="CELUX Renovation"
               className={`transition-all duration-500 ease-out object-contain origin-left block
                 ${isScrolled ? 'h-16 scale-x-[2]' : 'h-20 scale-x-[2.1]'}
