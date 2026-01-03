@@ -5,7 +5,7 @@ const Gallery: React.FC = () => {
   const images = Array.from({ length: 18 }, (_, i) => ({
     id: i + 1,
     name: `celux_renovation_image${i + 1}`,
-    url: `./images/celux_renovation_image${i + 1}.jpg`
+    url: `/images/celux_renovation_image${i + 1}.jpg`
   }));
 
   return (
