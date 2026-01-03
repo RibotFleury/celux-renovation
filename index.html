@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celux Renovation | Excellence in Interior Painting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --celux-gold: #eeca38;
+            --celux-black: #000000;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        .text-gold { color: var(--celux-gold); }
+        .bg-gold { background-color: var(--celux-gold); }
+        .border-gold { border-color: var(--celux-gold); }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .soft-shadow {
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
+        }
+        .gold-glow {
+            box-shadow: 0 0 20px rgba(238, 202, 56, 0.2);
+        }
+        .text-balance {
+            text-wrap: balance;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@0.460.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-white text-slate-800 antialiased">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
