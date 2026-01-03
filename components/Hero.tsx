@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
         <div className="relative">
           <div className="relative rounded-[50px] overflow-hidden soft-shadow transition-transform hover:scale-[1.01] duration-700 border-4 border-slate-50">
             <img 
-              src="images/celux_renovation_image14.jpg" 
+              src="./images/celux_renovation_image14.jpg" 
               alt="celux_renovation_image1"
               className="w-full aspect-[4/5] object-cover"
             />
