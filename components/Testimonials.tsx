@@ -11,13 +11,13 @@ const Testimonials: React.FC = () => {
     },
     {
       name: "Luc Girard",
-      location: "Ville de Québec",
+      location: "Laval",
       comment: "Enlever un papier peint vieux de 30 ans semblait impossible sans endommager les murs. Édouard a rendu cela facile. Hautement recommandé.",
       rating: 5
     },
     {
       name: "Isabelle Roy",
-      location: "Rive-Sud",
+      location: "Rive du nord",
       comment: "Une attention incroyable aux détails. Le système de peinture qu'ils utilisent laisse un fini luxueux au toucher comme à l'œil. Assurément les meilleurs de la région.",
       rating: 5
     }

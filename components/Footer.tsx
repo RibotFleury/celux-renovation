@@ -1,10 +1,10 @@
 
 import React from 'react';
-import { Palette, ArrowUp, Mail, Phone, Shield } from 'lucide-react';
+import { Palette, Mail, Phone, Shield } from 'lucide-react';
 
 const Footer: React.FC = () => {
-  const cities = ['Montréal', 'Rive-Nord', 'Rive-Sud', 'Ville de Québec'];
-  const specialties = ['Peinture Intérieure', 'Retrait de Papier Peint', 'Réparation de Plâtre'];
+  const cities = ['Laval ', 'Rive du Nord', 'Montréal'];
+  const specialties = ['Peinture Intérieure', 'Peinture Extérieure', 'Réparation de Plâtre', 'Terrasse et Clôture'];
 
   return (
     <footer className="bg-white border-t border-slate-100 pt-32 pb-16">
@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 2: Spécialités - Liens vers le portfolio (#gallery) */}
+          {/* Column 2: Spécialités */}
           <div>
             <h4 className="text-black font-bold text-lg mb-10 tracking-tight flex items-center gap-3">
               <span className="w-2 h-2 bg-[#eeca38] rounded-full"></span>
@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-6">
               {specialties.map((spec) => (
                 <li key={spec}>
-                  <a href="#gallery" className="text-slate-500 hover:text-black transition-all font-light flex items-center gap-4 group">
+                  <a href="#services" className="text-slate-500 hover:text-black transition-all font-light flex items-center gap-4 group">
                     <span className="w-6 h-0.5 bg-slate-100 group-hover:bg-[#eeca38] group-hover:w-8 transition-all"></span>
                     {spec}
                   </a>
@@ -74,12 +74,19 @@ const Footer: React.FC = () => {
               Contact
             </h4>
             <div className="space-y-10">
+               <div className="bg-slate-50 p-6 rounded-3xl border border-slate-100 flex items-center gap-4">
+               <Shield className="text-[#eeca38] w-6 h-6" />
+               <div>
+                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Licence Officielle</p>
+                 <p className="text-black font-mono text-xs font-bold uppercase">RBQ: 1234-5678-01</p>
+               </div>
+            </div>
               <div className="group cursor-pointer">
                 <div className="flex items-center gap-3 mb-2 text-slate-400">
                   <Mail className="w-4 h-4 text-[#eeca38]" />
                   <p className="text-[10px] font-bold uppercase tracking-widest">Envoyer un courriel</p>
                 </div>
-                <p className="text-black font-bold text-lg group-hover:text-[#eeca38] transition-colors break-words">contact@celuxrenovation.ca</p>
+                <p className="text-black font-bold text-lg group-hover:text-[#eeca38] transition-colors break-words">kamsuleader@gmail.com</p>
               </div>
               <div className="group cursor-pointer">
                 <div className="flex items-center gap-3 mb-2 text-slate-400">
@@ -96,6 +103,8 @@ const Footer: React.FC = () => {
           <div className="flex items-center gap-6">
             <p className="text-sm text-slate-400 font-medium">
               © {new Date().getFullYear()} <span className="text-black font-bold">Celux Renovation</span>
+              <span className="mx-2 text-slate-300">|</span>
+              <span className="text-[10px] uppercase tracking-widest text-slate-400">design by <span className="text-black font-bold">EvolveD</span></span>
             </p>
             <span className="w-1 h-1 bg-slate-200 rounded-full hidden md:block"></span>
             <div className="flex space-x-6 text-xs font-bold text-slate-400 uppercase tracking-widest">
@@ -103,13 +112,7 @@ const Footer: React.FC = () => {
                <a href="#" className="hover:text-black transition-colors">Conditions</a>
             </div>
           </div>
-          
-          <button 
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="w-14 h-14 bg-black rounded-2xl flex items-center justify-center hover:bg-[#eeca38] hover:text-black text-[#eeca38] transition-all shadow-xl group border-2 border-transparent hover:border-black"
-          >
-            <ArrowUp className="w-6 h-6 group-hover:-translate-y-1 transition-transform" />
-          </button>
+          {/* Le bouton a été déplacé dans App.tsx pour devenir flottant */}
         </div>
       </div>
     </footer>

@@ -5,10 +5,10 @@ import { Linkedin, Instagram, Quote } from 'lucide-react';
 const Team: React.FC = () => {
   const team = [
     {
-      name: "Édouard Celux",
+      name: "Loic KUETI",
       role: "Maître Artisan & Fondateur",
-      bio: "Plus de 15 ans de maîtrise dans la restauration de plâtre et la peinture de haute précision. Édouard dirige notre stratégie d'innovation technique.",
-      image: "https://picsum.photos/id/177/600/800"
+      bio: "Plus de 15 ans de maîtrise dans la restauration de plâtre et la peinture de haute précision. Loic dirige notre stratégie d'innovation technique.",
+      image: "/public/images/celux_renovation_maitre_ouvrage_image.jpeg"
     },
     {
       name: "Ribot CESKOUTSE",

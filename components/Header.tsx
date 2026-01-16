@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
-import { Palette, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,30 +19,36 @@ const Header: React.FC = () => {
   ];
 
   return (
-   <header 
-  className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
-    isScrolled ? 'bg-black/95 backdrop-blur-lg shadow-xl py-4' : 'bg-transparent py-6'
-  }`}
->
-
+    <header 
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
+        isScrolled ? 'bg-black/95 backdrop-blur-lg shadow-xl py-4' : 'bg-transparent py-6'
+      }`}
+    >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <div className="flex items-center space-x-3 group cursor-pointer">
-          <div className="flex items-center space-x-3 group cursor-pointer">
-            
-            <a href="#"><img
-              src="/images/celux_renovation_logo.jpg"
+        {/* Logo Section - Fixed stretching */}
+        <div className="flex items-center group cursor-pointer">
+          <a href="#" className="flex items-center">
+            <img
+              src="./images/celux_renovation_logo.jpg"
               alt="CELUX Renovation"
-              className={`transition-all duration-500 ease-out object-contain origin-left block
-                ${isScrolled ? 'h-16 scale-x-[2]' : 'h-20 scale-x-[2.1]'}
-                group-hover:scale-x-[2.25]
-                group-hover:-translate-y-0.5
-                group-hover:drop-shadow-[0_6px_12px_rgba(238,202,56,0.35)]
+              className={`transition-all duration-500 ease-out object-contain block rounded-lg
+                ${isScrolled ? 'h-14' : 'h-16'}
+                group-hover:scale-105
+                group-hover:drop-shadow-[0_0_15px_rgba(238,202,56,0.3)]
               `}
-            /></a>
-          </div>
+            />
+            <div className={`ml-4 flex flex-col transition-colors duration-500 ${isScrolled ? 'text-white' : 'text-black'}`}>
+              <span className="text-xl font-black tracking-tighter leading-none uppercase">
+                CELUX<span className="text-[#eeca38]">RENOVATION</span>
+              </span>
+              <span className={`text-[9px] uppercase tracking-[0.3em] font-bold ${isScrolled ? 'text-slate-400' : 'text-slate-500'}`}>
+                L'Art de la Finition
+              </span>
+            </div>
+          </a>
         </div>
 
-        {/* Desktop Nav */}
+        {/* Desktop Nav - Restored all links including Notre Équipe */}
         <nav className="hidden md:flex items-center space-x-10">
           {navLinks.map((link) => (
             <a
@@ -59,7 +64,7 @@ const Header: React.FC = () => {
           ))}
           <a 
             href="#contact" 
-            className="bg-[#eeca38] text-black px-6 py-2.5 rounded-full text-sm font-bold hover:bg-[#d9b832] transition-all shadow-lg hover:shadow-[#eeca38]/30 active:scale-95 flex items-center gap-2"
+            className="bg-[#eeca38] text-black px-8 py-3 rounded-full text-sm font-bold hover:bg-[#d9b832] transition-all shadow-lg active:scale-95 flex items-center gap-2"
           >
             Estimation
           </a>
@@ -67,10 +72,10 @@ const Header: React.FC = () => {
 
         {/* Mobile Toggle */}
         <button 
-          className={`md:hidden p-2 ${isScrolled ? 'text-white' : 'text-black'}`}
+          className={`md:hidden p-2 transition-colors ${isScrolled ? 'text-white' : 'text-black'}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          {mobileMenuOpen ? <X /> : <Menu />}
+          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
@@ -82,7 +87,7 @@ const Header: React.FC = () => {
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-lg font-bold text-white hover:text-[#eeca38]"
+              className="block text-lg font-bold text-white hover:text-[#eeca38] transition-colors"
             >
               {link.name}
             </a>
