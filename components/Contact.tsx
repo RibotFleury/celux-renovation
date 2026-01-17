@@ -20,7 +20,7 @@ const Contact: React.FC = () => {
     // En production : Remplacez par l'URL de votre serveur déployé (ex: Render ou Railway)
     const API_URL = window.location.hostname === 'localhost' 
       ? 'http://localhost:3001' 
-      : 'https://celux-api.onrender.com'; // REMPLACEZ CETTE URL APRES DEPLOIEMENT DU SERVEUR
+      : 'https://websitecr.onrender.com'; // REMPLACEZ CETTE URL APRES DEPLOIEMENT DU SERVEUR
 
     try {
       const response = await fetch(`${API_URL}/send-estimate`, {
