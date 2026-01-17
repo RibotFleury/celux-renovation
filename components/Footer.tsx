@@ -15,7 +15,9 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-10">
               <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center shadow-lg">
-                <Palette className="text-[#eeca38] w-5 h-5" />
+                <img
+              src="./images/celux_renovation_logo.jpg"
+              alt="CELUX Renovation" className="text-[#eeca38] w-5 h-5" />
               </div>
               <span className="text-xl font-bold tracking-tighter text-black uppercase">CELUX RENOVATION</span>
             </div>
