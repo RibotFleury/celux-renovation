@@ -15,9 +15,15 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setStatus('sending');
     
+    // DETERMINATION DE L'URL DE L'API
+    // En développement : http://localhost:3001
+    // En production : Remplacez par l'URL de votre serveur déployé (ex: Render ou Railway)
+    const API_URL = window.location.hostname === 'localhost' 
+      ? 'http://localhost:3001' 
+      : 'https://celux-api.onrender.com'; // REMPLACEZ CETTE URL APRES DEPLOIEMENT DU SERVEUR
+
     try {
-      // NOTE : Une fois déployé, remplacez 'http://localhost:3001' par l'URL de votre serveur réel.
-      const response = await fetch('http://localhost:3001/send-estimate', {
+      const response = await fetch(`${API_URL}/send-estimate`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -97,7 +103,7 @@ const Contact: React.FC = () => {
                     </div>
                     <div>
                       <p className="text-slate-500 text-[10px] font-bold uppercase tracking-widest">Courriel</p>
-                      <p className="text-white font-semibold">celuxrenovation@gmail.com</p>
+                      <p className="text-white font-semibold">kamsuleader@gmail.com</p>
                     </div>
                   </div>
                 </div>
@@ -120,7 +126,7 @@ const Contact: React.FC = () => {
                 {status === 'error' && (
                   <div className="bg-red-50 text-red-600 p-4 rounded-xl flex items-center gap-3 text-sm font-medium border border-red-100">
                     <AlertTriangle className="w-5 h-5" />
-                    Le serveur ne répond pas. Lancez le serveur Node.js !
+                    Le service d'envoi est indisponible. Veuillez nous contacter par téléphone.
                   </div>
                 )}
                 
