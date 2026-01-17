@@ -6,6 +6,7 @@ import Services from './components/Services';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Team from './components/Team';
 import { ArrowUp } from 'lucide-react';
 
 const App: React.FC = () => {
@@ -32,7 +33,8 @@ const App: React.FC = () => {
         <Services />
         <Gallery />
         {/* Note: Mission, Team, and Testimonials components are mentioned in your request 
-            but not present in the provided file list. Ensure they are imported if you add them. */}
+            but not present in the provided file list. Ensure they are imported if you add them. */} 
+        <Team />
         <Contact />
       </main>
 
