@@ -1,40 +1,8 @@
 
-import React, { useState, useEffect } from 'react';
-import { ArrowRight, Star, ShieldCheck, ChevronLeft, ChevronRight } from 'lucide-react';
+import React from 'react';
+import { ArrowRight, Star, ShieldCheck } from 'lucide-react';
 
 const Hero: React.FC = () => {
-  const [currentImage, setCurrentImage] = useState(0);
-  
-  // Carousel mapping to your specific service images
-  const carouselItems = [
-    {
-      url: "images/celux_renovation_image14.jpeg",
-      label: "Peinture Intérieure"
-    },
-    {
-      url: "images/celux_renovation_image1_peinture_exterieur.jpeg",
-      label: "Peinture Extérieure"
-    },
-    {
-      url: "images/celux_renovation_image1_peinture_terrasse-cloture.jpeg",
-      label: "Peinture de Terrasse"
-    },
-    {
-      url: "images/celux_renovation_image2_peinture_interieur.jpeg",
-      label: "Finition Résidentielle"
-    }
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentImage((prev) => (prev === carouselItems.length - 1 ? 0 : prev + 1));
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [carouselItems.length]);
-
-  const nextImage = () => setCurrentImage((prev) => (prev === carouselItems.length - 1 ? 0 : prev + 1));
-  const prevImage = () => setCurrentImage((prev) => (prev === 0 ? carouselItems.length - 1 : prev - 1));
-
   return (
     <section className="relative min-h-[90vh] flex items-center pt-24 pb-12 overflow-hidden bg-white">
       <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-50 -z-10 rounded-l-[150px] hidden lg:block"></div>
@@ -80,34 +48,17 @@ const Hero: React.FC = () => {
           </div>
         </div>
         
-        <div className="relative group">
-          {/* Main Carousel Container */}
+        <div className="relative">
+          {/* Single Static Image Container */}
           <div className="relative rounded-[50px] overflow-hidden shadow-2xl border-4 border-slate-50 aspect-[4/5] w-full bg-slate-100">
-            {carouselItems.map((item, idx) => (
-              <div 
-                key={idx}
-                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === currentImage ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
-              >
-                <img 
-                  src={item.url} 
-                  alt={item.label}
-                  className={`w-full h-full object-cover transition-transform duration-[10000ms] ease-out ${idx === currentImage ? 'scale-110' : 'scale-100'}`}
-                />
-              </div>
-            ))}
+            <img 
+              src="./images/celux_renovation_image14.jpeg" 
+              alt="Signature Celux Peinture"
+              className="w-full h-full object-cover"
+            />
             
             {/* Overlay Gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-20"></div>
-
-            {/* Manual Controls */}
-            <div className="absolute top-1/2 -translate-y-1/2 left-4 right-4 flex justify-between z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <button onClick={prevImage} className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-[#eeca38] hover:text-black transition-all">
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <button onClick={nextImage} className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-[#eeca38] hover:text-black transition-all">
-                <ChevronRight className="w-6 h-6" />
-              </button>
-            </div>
             
             {/* Branding Card */}
             <div className="absolute bottom-10 left-6 right-6 md:left-10 md:right-10 bg-black/80 backdrop-blur-xl p-8 rounded-3xl border border-[#eeca38]/30 flex items-center gap-6 z-30">
@@ -119,19 +70,9 @@ const Hero: React.FC = () => {
                 />
               </div>
               <div className="text-white">
-                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#eeca38] mb-1">Service : {carouselItems[currentImage].label}</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#eeca38] mb-1">Service : Peinture Signature</p>
                 <p className="text-xl font-bold tracking-tight">Signature Celux Élite</p>
               </div>
-            </div>
-
-            {/* Pagination Dots */}
-            <div className="absolute top-6 right-10 flex gap-2 z-30">
-              {carouselItems.map((_, idx) => (
-                <div 
-                  key={idx} 
-                  className={`h-1.5 rounded-full transition-all duration-500 ${idx === currentImage ? 'w-8 bg-[#eeca38]' : 'w-2 bg-white/40'}`}
-                />
-              ))}
             </div>
           </div>
 
