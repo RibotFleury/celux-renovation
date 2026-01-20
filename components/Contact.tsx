@@ -87,7 +87,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="flex items-center gap-5">
                   <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-[#eeca38] border border-white/10"><Mail className="w-6 h-6" /></div>
-                  <div><p className="text-slate-500 text-[10px] font-bold uppercase tracking-widest">Email</p><p className="text-white font-semibold">kamsuleader@gmail.com</p></div>
+                  <div><p className="text-slate-500 text-[10px] font-bold uppercase tracking-widest">Email</p><p className="text-white font-semibold">celuxrenovation@gmail.com</p></div>
                 </div>
               </div>
             </div>

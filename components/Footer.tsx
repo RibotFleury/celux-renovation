@@ -88,7 +88,7 @@ const Footer: React.FC = () => {
                   <Mail className="w-4 h-4 text-[#eeca38]" />
                   <p className="text-[10px] font-bold uppercase tracking-widest">Envoyer un courriel</p>
                 </div>
-                <p className="text-black font-bold text-lg group-hover:text-[#eeca38] transition-colors break-words">kamsuleader@gmail.com</p>
+                <p className="text-black font-bold text-lg group-hover:text-[#eeca38] transition-colors break-words">celuxrenovation@gmail.com</p>
               </div>
               <div className="group cursor-pointer">
                 <div className="flex items-center gap-3 mb-2 text-slate-400">
