@@ -23,21 +23,30 @@ const Contact: React.FC = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify(formState),
       });
 
-      const result = await response.json();
+      // Lecture textuelle d'abord pour attraper les erreurs 500 HTML de Vercel
+      const text = await response.text();
+      let result;
+      try {
+        result = text ? JSON.parse(text) : {};
+      } catch (parseError) {
+        console.error("Le serveur n'a pas renvoyé de JSON:", text);
+        throw new Error("Le serveur a rencontré une erreur critique (500). Veuillez vérifier les logs Vercel.");
+      }
 
-      if (response.ok && result.success) {
+      if (response.ok && (result.success || response.status === 200)) {
         setStatus('success');
       } else {
-        throw new Error(result.error || "Une erreur est survenue lors de l'envoi.");
+        throw new Error(result.error || result.message || "L'envoi a échoué. Veuillez nous contacter directement au (514) 926-9134.");
       }
     } catch (error: any) {
-      console.error("Erreur d'envoi:", error);
+      console.error("Erreur d'envoi client:", error);
       setStatus('error');
-      setErrorMessage(error.message || "L'envoi a échoué. Veuillez nous contacter directement au (514) 926-9134.");
+      setErrorMessage(error.message || "Une erreur inattendue est survenue lors de l'envoi.");
     }
   };
 
