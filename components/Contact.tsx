@@ -19,7 +19,7 @@ const Contact: React.FC = () => {
     
     try {
       // Appel à l'API serverless située dans /api/send-estimate.js
-      const response = await fetch('http://localhost:3001/send-estimate', {
+      const response = await fetch('/api/send-estimate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
