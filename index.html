@@ -1,71 +1,91 @@
-
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Celux Renovation | Excellence in Interior Painting</title>
+    
+    <!-- SEO de base -->
+    <title>Celux Rénovation | Peintre Professionnel à Laval, Montréal & Rive-Nord</title>
+    <meta name="description" content="Services de peinture résidentielle haut de gamme à Laval et Montréal. Experts en peinture intérieure, extérieure, plâtre et teinture de bois. Estimation gratuite en 24h.">
+    <meta name="keywords" content="peintre laval, peintre montréal, peinture résidentielle, peintre rive-nord, celux rénovation, peinture intérieur, peinture extérieur, réparation plâtre">
+    <link rel="canonical" href="https://www.celuxrenovation.ca">
+    
+    <!-- Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.celuxrenovation.ca">
+    <meta property="og:title" content="Celux Rénovation | Peintre de Luxe à Laval et Montréal">
+    <meta property="og:description" content="Transformez votre intérieur avec notre équipe de peintres professionnels. Qualité signature et finition impeccable garantie.">
+    <meta property="og:image" content="./images/celux_renovation_image14.jpeg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Celux Rénovation | Services de Peinture Élite">
+    <meta name="twitter:description" content="Peinture intérieure et extérieure à Laval. Demandez votre estimation gratuite.">
+
+    <!-- Données Structurées JSON-LD (SEO Local) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "Celux Rénovation",
+      "image": "https://www.celuxrenovation.ca/images/celux_renovation_logo.jpg",
+      "@id": "https://www.celuxrenovation.ca",
+      "url": "https://www.celuxrenovation.ca",
+      "telephone": "+1-514-926-9134",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "Laval",
+        "addressRegion": "QC",
+        "postalCode": "",
+        "addressCountry": "CA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 45.5646,
+        "longitude": -73.7197
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/celuxrenovation",
+        "https://www.instagram.com/celuxrenovation"
+      ],
+      "areaServed": ["Laval", "Montréal", "Rive-Nord"]
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --celux-gold: #eeca38;
-            --celux-black: #000000;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-        }
-        .text-gold { color: var(--celux-gold); }
-        .bg-gold { background-color: var(--celux-gold); }
-        .border-gold { border-color: var(--celux-gold); }
-        
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .soft-shadow {
-            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
-        }
-        .gold-glow {
-            box-shadow: 0 0 20px rgba(238, 202, 56, 0.2);
-        }
-        .text-balance {
-            text-wrap: balance;
-        }
+        body { font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
     </style>
 <script type="importmap">
 {
   "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
     "react/": "https://esm.sh/react@^19.2.3/",
     "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "lucide-react": "https://esm.sh/lucide-react@0.460.0"
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
   }
 }
 </script>
-<script
-  type="text/javascript"
-  src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js">
-</script>
-
-<script type="text/javascript">
-  (function () {
-    emailjs.init("jEhXysjIu4EQndaQq");
-  })();
-</script>
-
-<link rel="stylesheet" href="/index.css">
 </head>
-<body class="bg-white text-slate-800 antialiased">
+<body class="bg-white antialiased">
     <div id="root"></div>
-<script type="module" src="/index.tsx"></script>
+    <script type="module" src="/index.tsx"></script>
 </body>
 </html>
