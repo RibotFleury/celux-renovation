@@ -8,7 +8,7 @@ const Team: React.FC = () => {
       name: "Loic KUETI",
       role: "Maître Artisan & Fondateur",
       bio: "Plus de 15 ans de maîtrise dans la restauration de plâtre et la peinture de haute précision. Loic dirige notre stratégie d'innovation technique.",
-      image: "/public/images/celux_renovation_maitre_ouvrage_image.jpeg"
+      image: "/images/celux_renovation_maitre_ouvrage_image.jpeg"
     },
     {
       name: "Ribot CESKOUTSE",

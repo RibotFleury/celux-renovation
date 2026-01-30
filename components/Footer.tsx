@@ -78,13 +78,6 @@ const Footer: React.FC = () => {
               Contact
             </h4>
             <div className="space-y-8 md:space-y-10">
-                <div className="bg-slate-50 p-5 md:p-6 rounded-3xl border border-slate-100 flex items-center gap-4 max-w-fit">
-                <Shield className="text-[#eeca38] w-6 h-6 flex-shrink-0" />
-                <div>
-                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Licence Officielle</p>
-                  <p className="text-black font-mono text-xs font-bold uppercase">RBQ: 1234-5678-01</p>
-                </div>
-            </div>
               <div className="group cursor-pointer">
                 <div className="flex items-center gap-3 mb-2 text-slate-400">
                   <Mail className="w-4 h-4 text-[#eeca38] flex-shrink-0" />
@@ -97,7 +90,7 @@ const Footer: React.FC = () => {
                   <Phone className="w-4 h-4 text-[#eeca38] flex-shrink-0" />
                   <p className="text-[10px] font-bold uppercase tracking-widest">Appeler l'équipe</p>
                 </div>
-                <p className="text-black font-bold text-base md:text-lg group-hover:text-[#eeca38] transition-colors">(514) 555-0199</p>
+                <p className="text-black font-bold text-base md:text-lg group-hover:text-[#eeca38] transition-colors">+1-514-926-9134</p>
               </div>
             </div>
           </div>

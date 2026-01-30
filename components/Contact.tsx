@@ -6,7 +6,7 @@ const Contact: React.FC = () => {
   const [formState, setFormState] = useState({
     name: '',
     email: '',
-    service: 'Peinture Intérieure',
+    service: 'Peinture Intérieur',
     message: ''
   });
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
@@ -18,35 +18,26 @@ const Contact: React.FC = () => {
     setErrorMessage('');
     
     try {
-      // @ts-ignore - Le SDK EmailJS est injecté dans index.html
-      if (typeof emailjs !== 'undefined') {
-        const templateParams = {
-          from_name: formState.name,
-          from_email: formState.email,
-          service_type: formState.service,
-          message: formState.message,
-          to_email: 'kamsuleader@gmail.com'
-        };
+      // Appel à l'API serverless située dans /api/send-estimate.js
+      const response = await fetch('http://localhost:3001/send-estimate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formState),
+      });
 
-        // @ts-ignore
-        const result = await emailjs.send(
-          'VOTRE_SERVICE_ID', 
-          'VOTRE_TEMPLATE_ID', 
-          templateParams
-        );
+      const result = await response.json();
 
-        if (result.status === 200) {
-          setStatus('success');
-        } else {
-          throw new Error("Erreur de réponse du service d'envoi");
-        }
+      if (response.ok && result.success) {
+        setStatus('success');
       } else {
-        throw new Error("Le service d'envoi (EmailJS) n'est pas chargé correctement.");
+        throw new Error(result.error || "Une erreur est survenue lors de l'envoi.");
       }
     } catch (error: any) {
-      console.error("Erreur d'envoi réelle:", error);
+      console.error("Erreur d'envoi:", error);
       setStatus('error');
-      setErrorMessage("L'envoi a échoué. Veuillez vérifier votre connexion ou nous contacter directement au (514) 555-0199.");
+      setErrorMessage(error.message || "L'envoi a échoué. Veuillez nous contacter directement au (514) 926-9134.");
     }
   };
 
@@ -59,9 +50,9 @@ const Contact: React.FC = () => {
               <div className="w-20 h-20 md:w-24 md:h-24 bg-[#eeca38] rounded-full flex items-center justify-center mb-8 animate-bounce">
                 <CheckCircle className="w-10 h-10 md:w-12 md:h-12 text-black" />
               </div>
-              <h2 className="text-3xl md:text-6xl font-bold text-white mb-6">Demande Envoyée !</h2>
+              <h2 className="text-3xl md:text-6xl font-bold text-white mb-6 leading-tight">Demande Envoyée !</h2>
               <p className="text-lg md:text-xl text-slate-400 mb-12 max-w-2xl">
-                Merci {formState.name}. Votre demande pour <span className="text-[#eeca38] font-bold">{formState.service}</span> a été transmise à notre équipe. Nous vous contacterons sous peu.
+                Merci {formState.name}. Votre demande pour <span className="text-[#eeca38] font-bold">{formState.service}</span> a été transmise. Nous vous contacterons sous peu.
               </p>
               <button onClick={() => setStatus('idle')} className="text-[#eeca38] font-bold uppercase text-xs tracking-widest flex items-center gap-2 hover:opacity-80 transition-opacity">
                 <RefreshCcw className="w-4 h-4" /> Nouvelle demande
@@ -88,7 +79,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-slate-500 text-[10px] font-bold uppercase tracking-widest">Appel direct</p>
-                    <p className="text-white font-semibold text-sm md:text-base">(514) 555-0199</p>
+                    <a href="tel:+15149269134" className="text-white font-semibold text-sm md:text-base hover:text-[#eeca38] transition-colors">+1-514-926-9134</a>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 md:gap-5">
@@ -97,7 +88,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-slate-500 text-[10px] font-bold uppercase tracking-widest">Email</p>
-                    <p className="text-white font-semibold text-sm md:text-base break-all">kamsuleader@gmail.com</p>
+                    <a href="mailto:celuxrenovation@gmail.com" className="text-white font-semibold text-sm md:text-base break-all hover:text-[#eeca38] transition-colors">celuxrenovation@gmail.com</a>
                   </div>
                 </div>
               </div>
@@ -124,9 +115,10 @@ const Contact: React.FC = () => {
                 <div className="space-y-1">
                   <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-2">Type de service</label>
                   <select value={formState.service} onChange={(e) => setFormState({...formState, service: e.target.value})} className="w-full bg-slate-50 rounded-xl md:rounded-2xl py-3 md:py-4 px-5 md:px-6 outline-none text-sm font-bold appearance-none cursor-pointer border-r-[16px] border-transparent">
-                    <option>Peinture Intérieure</option>
-                    <option>Peinture Extérieure</option>
-                    <option>Terrasse & Clôture</option>
+                    <option value="Peinture Intérieur">Peinture Intérieur</option>
+                    <option value="Peinture ext">Peinture ext</option>
+                    <option value="Réparation de Plâtre">Réparation de Plâtre</option>
+                    <option value="Terrasse & Clôture">Terrasse & Clôture</option>
                   </select>
                 </div>
                 <div className="space-y-1">

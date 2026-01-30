@@ -1,10 +1,9 @@
-
 import React from 'react';
 import { ArrowRight, Star, ShieldCheck } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-24 pb-12 overflow-hidden bg-white">
+    <section className="relative min-h-[90vh] flex items-center pt-28 md:pt-32 pb-12 overflow-hidden bg-white">
       <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-50 -z-10 rounded-l-[150px] hidden lg:block"></div>
       
       <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
