@@ -4,12 +4,11 @@ import { CheckCircle2, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-reac
 
 const serviceImages = [
   // Interior
-  { id: 1, url: './images/celux_renovation_image1_peinture_interieur.jpeg', name: 'Salon Prestige', type: 'Peinture Intérieure', desc: 'Finition mate profonde.' },
-  { id: 2, url: './images/celux_renovation_image2_peinture_interieur.jpeg', name: 'Espace Culinaire', type: 'Peinture Intérieure', desc: 'Revêtement lavable haute performance.' },
-  { id: 3, url: './images/celux_renovation_image3_peinture_interieur.jpeg', name: 'Chambre de Maître', type: 'Peinture Intérieure', desc: 'Ambiance sereine.' },
-  { id: 4, url: './images/celux_renovation_image4_peinture_interieur.jpeg', name: 'Hall d\'Entrée', type: 'Peinture Intérieure', desc: 'Finition satinée lumineuse.' },
-  { id: 5, url: './images/celux_renovation_image5_peinture_interieur.jpeg', name: 'Détail Plâtre', type: 'Peinture Intérieure', desc: 'Restauration invisible de surfaces.' },
-  { id: 6, url: './images/celux_renovation_image6_peinture_interieur.jpeg', name: 'Bureau Exécutif', type: 'Peinture Intérieure', desc: 'Lignes épurées modernes.' },
+  { id: 1, url: './images/celux_renovation_image2_peinture_interieur.jpeg', name: 'Espace Culinaire', type: 'Peinture Intérieure', desc: 'Revêtement lavable haute performance.' },
+  { id: 2, url: './images/celux_renovation_image3_peinture_interieur.jpeg', name: 'Chambre de Maître', type: 'Peinture Intérieure', desc: 'Ambiance sereine.' },
+  { id: 3, url: './images/celux_renovation_image4_peinture_interieur.jpeg', name: 'Hall d\'Entrée', type: 'Peinture Intérieure', desc: 'Finition satinée lumineuse.' },
+  { id: 4, url: './images/celux_renovation_image5_peinture_interieur.jpeg', name: 'Détail Plâtre', type: 'Peinture Intérieure', desc: 'Restauration invisible de surfaces.' },
+  { id: 5, url: './images/celux_renovation_image6_peinture_interieur.jpeg', name: 'Bureau Exécutif', type: 'Peinture Intérieure', desc: 'Lignes épurées modernes.' },
   
   // Exterior
   { id: 7, url: './images/celux_renovation_image1_peinture_exterieur.jpeg', name: 'Résidence Moderne', type: 'Peinture Extérieure', desc: 'Protection élastomère.' },
@@ -48,10 +47,8 @@ const ServiceCard: React.FC<{ title: string; desc: string; type: string; feature
             className={`absolute inset-0 transition-all duration-700 ease-in-out ${idx === activeIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-110 pointer-events-none'}`}
           >
             <img src={img.url} alt={img.name} className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-            
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div> 
             <div className="absolute bottom-8 left-10 right-10 text-white">
-              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#eeca38] mb-2">Réalisation Celux</p>
               <h4 className="text-2xl font-bold tracking-tight mb-1">{img.name}</h4>
               <p className="text-sm font-light text-slate-300 italic">{img.desc}</p>
             </div>

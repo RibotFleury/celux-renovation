@@ -125,7 +125,7 @@ const Contact: React.FC = () => {
                   <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-2">Type de service</label>
                   <select value={formState.service} onChange={(e) => setFormState({...formState, service: e.target.value})} className="w-full bg-slate-50 rounded-xl md:rounded-2xl py-3 md:py-4 px-5 md:px-6 outline-none text-sm font-bold appearance-none cursor-pointer border-r-[16px] border-transparent">
                     <option value="Peinture Intérieur">Peinture Intérieur</option>
-                    <option value="Peinture ext">Peinture ext</option>
+                    <option value="Peinture ext">Peinture extérieur</option>
                     <option value="Réparation de Plâtre">Réparation de Plâtre</option>
                     <option value="Terrasse & Clôture">Terrasse & Clôture</option>
                   </select>

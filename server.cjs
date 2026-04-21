@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 });
 
 const EMAIL_USER = process.env.EMAIL_USER || 'kamsuleader@gmail.com';
-const EMAIL_PASS = process.env.EMAIL_PASS || 'fddsavvshmpbshck';
+const EMAIL_PASS = process.env.EMAIL_PASS || 'wixqfcnzuojxuucy';
 
 // Utilisation du port 465 (SMTPS) qui est plus direct et moins sujet aux blocages
 const transporter = nodemailer.createTransport({

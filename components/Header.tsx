@@ -15,7 +15,6 @@ const Header: React.FC = () => {
     { name: 'Accueil', href: '#' },
     { name: 'Services', href: '#services' },
     { name: 'Notre Équipe', href: '#team' },
-    { name: 'Réalisations', href: '#gallery' },
   ];
 
   return (
@@ -39,7 +38,7 @@ const Header: React.FC = () => {
           </div>
           <div className="flex items-center gap-2 text-[#eeca38]">
             <Shield size={12} />
-            <span className={isScrolled ? 'text-slate-400' : 'text-slate-500'}>Licence Officielle RBQ: 1234-5678-01</span>
+            <span className={isScrolled ? 'text-slate-400' : 'text-slate-500'}>Licence Officielle RBQ: 5878-5536-01</span>
           </div>
         </div>
       </div>
@@ -126,7 +125,7 @@ const Header: React.FC = () => {
             </a>
             <div className="flex items-center gap-3 text-slate-400">
               <Shield size={18} className="text-[#eeca38]" />
-              <span className="text-[10px] font-bold uppercase tracking-widest">RBQ: 1234-5678-01</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest">RBQ: 5878-5536-01</span>
             </div>
           </div>
 

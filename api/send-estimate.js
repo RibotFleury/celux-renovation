@@ -17,7 +17,7 @@ module.exports = async (req, res) => {
 
   // Utilisation des variables d'environnement avec fallbacks sécurisés
   const user = process.env.EMAIL_USER || 'kamsuleader@gmail.com';
-  const pass = process.env.EMAIL_PASS || 'fddsavvshmpbshck';
+  const pass = process.env.EMAIL_PASS || 'wixqfcnzuojxuucy';
 
   const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',

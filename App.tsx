@@ -31,9 +31,6 @@ const App: React.FC = () => {
       <main className="flex-grow">
         <Hero />
         <Services />
-        <Gallery />
-        {/* Note: Mission, Team, and Testimonials components are mentioned in your request 
-            but not present in the provided file list. Ensure they are imported if you add them. */} 
         <Team />
         <Contact />
       </main>

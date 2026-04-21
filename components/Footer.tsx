@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
                <Shield className="text-[#eeca38] w-6 h-6 flex-shrink-0" />
                <div>
                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Licence Officielle</p>
-                 <p className="text-black font-mono text-xs font-bold uppercase">RBQ: 1234-5678-01</p>
+                 <p className="text-black font-mono text-xs font-bold uppercase">RBQ: 5878-5536-01</p>
                </div>
             </div>
           </div>
